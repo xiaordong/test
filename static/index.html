@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>至胜小说</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #new-up td {
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="site-nav">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#" id="home-link" class="active">首页</a></li>
+                <li><a href="/detail">书库</a></li>
+                <li><a href="/detail">排行</a></li>
+                <li><a href="/detail">全本</a></li>
+                <li><a href="/detail">轨迹</a></li>
+            </ul>
+
+            <div class="search-box">
+                <input type="text" placeholder="搜索作品">
+                <button>搜索</button>
+            </div>
+
+            <div class="auth-links">
+                <a href="/detail">登录</a>
+                <a href="/detail">注册</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="notice-bar visible-xs">
+            <span class="red">提示：</span>请记住本站最新网址：<span
+                class="red">wz09.eeyyk.cn</span>！为响应国家净网行动号召，本站清理了所有涉黄的小说，导致大量书籍错乱，<span
+                class="red">若打开链接发现不是要看的书，请点击上方搜索图标重新搜索该书即可</span>，感谢您的访问！
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-fire" aria-hidden="true"></span> 推荐阅读
+                <a class="pull-right" href="/detail">More+</a>
+            </div>
+            <div class="panel-body">
+                <div class="book-list" id="recommend-container">
+                    <div class="loading">
+                        <i class="fa fa-circle-o-notch fa-spin"></i>
+                        <p>加载中...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-row">
+            <div class="category-col">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> 玄幻魔法
+                        <a class="pull-right" href="/detail">More+</a>
+                    </div>
+                    <ul class="list-group" id="category-xuanhuan">
+                        <li class="list-group-item loading">
+                            <i class="fa fa-circle-o-notch fa-spin"></i> 加载中...
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="category-col">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> 都市言情
+                        <a class="pull-right" href="/detail">More+</a>
+                    </div>
+                    <ul class="list-group" id="category-dushi">
+                        <li class="list-group-item loading">
+                            <i class="fa fa-circle-o-notch fa-spin"></i> 加载中...
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="category-col">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> 仙侠修真
+                        <a class="pull-right" href="/detail">More+</a>
+                    </div>
+                    <ul class="list-group" id="category-xianxia">
+                        <li class="list-group-item loading">
+                            <i class="fa fa-circle-o-notch fa-spin"></i> 加载中...
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="category-col">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> 历史军事
+                        <a class="pull-right" href="/detail">More+</a>
+                    </div>
+                    <ul class="list-group" id="category-lishi">
+                        <li class="list-group-item loading">
+                            <i class="fa fa-circle-o-notch fa-spin"></i> 加载中...
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="category-col">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> 网游竞技
+                        <a class="pull-right" href="/detail">More+</a>
+                    </div>
+                    <ul class="list-group" id="category-wangyou">
+                        <li class="list-group-item loading">
+                            <i class="fa fa-circle-o-notch fa-spin"></i> 加载中...
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="category-col">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> 科幻未来
+                        <a class="pull-right" href="/detail">More+</a>
+                    </div>
+                    <ul class="list-group" id="category-kehuan">
+                        <li class="list-group-item loading">
+                            <i class="fa fa-circle-o-notch fa-spin"></i> 加载中...
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> 最新入库
+                        <a class="pull-right" href="/detail">More+</a>
+                    </div>
+                    <table class="table" id="new-in">
+                        <tbody>
+                            <tr>
+                                <td class="loading" colspan="3">
+                                    <i class="fa fa-circle-o-notch fa-spin"></i> 加载中...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> 最新资讯
+                    </div>
+                    <table class="table" id="new-msg">
+                        <tbody>
+                            <tr>
+                                <td class="loading" colspan="1">
+                                    <i class="fa fa-circle-o-notch fa-spin"></i> 加载中...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <span class="glyphicon glyphicon-time" aria-hidden="true"></span> 最近更新
+                        <a class="pull-right" href="/detail">More+</a>
+                    </div>
+                    <table class="table" id="new-up">
+                        <tbody>
+                            <tr>
+                                <td class="loading" colspan="5">
+                                    <i class="fa fa-circle-o-notch fa-spin"></i> 加载中...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default hidden-xs">
+            <div class="panel-heading">
+                <span class="text-muted"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> 友情链接</span>
+            </div>
+            <div class="panel-body panel-friendlink">
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>本站所有小说为转载作品，所有章节均由网友上传，转载至本站只是为了宣传本书让更多读者欣赏。</p>
+            <p>陇ICP备2025020409号-2</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        document.getElementById('home-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            location.reload();
+        });
+    </script>
+    <script>
+        document.querySelector('.nav-links li a.active').addEventListener('click', function (e) {
+            e.preventDefault();
+            location.reload();
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>测试关键词14 - 资源宝测试</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* 基础样式保持与目标站一致 */
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            color: #333;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* 导航栏整体 */
+        .site-nav {
+            background-color: #6b31c1;
+            padding: 0 20px;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 950px;
+            margin: 0 auto;
+            height: 60px;
+        }
+
+        /* 左侧导航链接 */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-links li {
+            margin-right: 20px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 5px;
+            font-size: 16px;
+        }
+
+        .nav-links .active {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* 中间搜索区 */
+        .search-box {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 4px;
+            overflow: hidden;
+            flex-grow: 1;
+            max-width: 300px;
+            margin: 0 20px;
+        }
+
+        .search-box input {
+            border: none;
+            padding: 8px 12px;
+            flex-grow: 1;
+            outline: none;
+        }
+
+        .search-box button {
+            border: none;
+            background-color: #87d0f1;
+            color: #fff;
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+
+        /* 右侧登录注册 */
+        .auth-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .auth-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        /* 推荐阅读模块（示例，保持自适应） */
+        .recommend-section {
+            background-color: #f8f8f8;
+            padding: 10px 0;
+        }
+
+        .recommend-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+
+        .recommend-header .icon {
+            margin-right: 8px;
+        }
+
+        .recommend-header h3 {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .recommend-header .more {
+            color: #6b31c1;
+            text-decoration: none;
+        }
+
+
+        .navbar .container {
+            position: relative;
+        }
+
+        .navbar-nav>li>a {
+            color: #fff !important;
+            font-size: 16px;
+            padding: 15px 20px;
+        }
+
+        .navbar-nav>li>a:hover {
+            background-color: #c81623 !important;
+        }
+
+        .navbar-form {
+            margin-top: 12px;
+        }
+
+        .navbar-form .form-control {
+            width: 200px;
+            border-radius: 0;
+            border: none;
+        }
+
+        .navbar-form .btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 0;
+        }
+
+        /* 提示条样式 */
+        .notice-bar {
+            font-size: 14px;
+            padding: 10px;
+            background-color: #ffffed;
+            color: #000;
+            margin-bottom: 20px;
+            border: 1px solid #ffe7c2;
+        }
+
+        .notice-bar span.red {
+            color: #e4393c;
+            font-weight: bold;
+        }
+
+        /* 通用面板样式 */
+        .panel {
+            margin-bottom: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+        }
+
+        .panel-heading {
+            padding: 10px 15px;
+            background-color: #f5f5f5;
+            border-bottom: 1px solid #ddd;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+
+        .panel-heading .glyphicon {
+            margin-right: 5px;
+            color: #e4393c;
+        }
+
+        .panel-heading .pull-right {
+            color: #666;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .panel-heading .pull-right:hover {
+            color: #e4393c;
+            text-decoration: underline;
+        }
+
+        .panel-body {
+            padding: 15px;
+        }
+
+        /* 推荐阅读样式 */
+        .book-list {
+            margin: 0 -10px;
+            overflow: hidden;
+        }
+
+        .book-item {
+            width: 50%;
+            padding: 0 10px 20px;
+            float: left;
+        }
+
+        .book-card {
+            display: flex;
+            height: 100%;
+            text-align: left;
+        }
+
+        .cover-container {
+            flex: 0 0 100px;
+            margin-right: 15px;
+        }
+
+        .thumbnail {
+            display: block;
+            width: 100px;
+            height: 140px;
+            background-size: cover;
+            background-position: center;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .book-info {
+            flex: 1;
+            padding-top: 5px;
+        }
+
+        .book-title {
+            font-size: 16px;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            height: 40px;
+            overflow: hidden;
+        }
+
+        .book-title a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .book-title a:hover {
+            color: #e4393c;
+            text-decoration: underline;
+        }
+
+        .book-author {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 6px;
+        }
+
+        .book-intro {
+            font-size: 12px;
+            color: #999;
+            line-height: 1.6;
+            height: 60px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+        /* 分类列表样式 */
+        .category-row {
+            margin: 0 -10px 20px;
+            overflow: hidden;
+        }
+
+        .category-col {
+            width: 33.333%;
+            float: left;
+            padding: 0 10px;
+        }
+
+        .list-group {
+            margin-bottom: 0;
+        }
+
+        .list-group-item {
+            border-radius: 0;
+            border-left: none;
+            border-right: none;
+            padding: 8px 15px;
+            border-color: #f1f1f1;
+            overflow: hidden;
+        }
+
+        .list-group-item:first-child {
+            border-top: none;
+        }
+
+        .list-group-item a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: calc(100% - 90px);
+            float: left;
+        }
+
+        .list-group-item a:hover {
+            color: #e4393c;
+        }
+
+        .list-group-item .pull-right {
+            color: #999;
+            font-size: 12px;
+            width: 80px;
+            text-align: right;
+            float: right !important;
+        }
+
+        /* 表格样式 */
+        .table {
+            margin-bottom: 0;
+        }
+
+        .table td {
+            padding: 8px 10px;
+            border-top: 1px solid #f1f1f1;
+        }
+
+        .table tr:first-child td {
+            border-top: none;
+        }
+
+        .table a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .table a:hover {
+            color: #e4393c;
+            text-decoration: underline;
+        }
+
+        /* 底部样式 */
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+            color: #999;
+            font-size: 12px;
+            border-top: 1px solid #ddd;
+        }
+
+        /* 加载状态样式 */
+        .loading {
+            text-align: center;
+            padding: 50px 0;
+            color: #666;
+        }
+
+        .loading i {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #999;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 992px) {
+            .category-col {
+                width: 50%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .book-item,
+            .category-col {
+                width: 100%;
+            }
+
+            .cover-container {
+                flex: 0 0 80px;
+            }
+
+            .thumbnail {
+                width: 80px;
+                height: 110px;
+            }
+
+            .navbar-form {
+                display: none;
+            }
+        }
+
+        /* detail.html 原有样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #6f42c1;
+        }
+
+        .breadcrumb {
+            background: #fff;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .breadcrumb .container {
+            width: 900px;
+            margin: 0 auto;
+            font-size: 14px;
+            color: #999;
+        }
+
+        .breadcrumb a {
+            color: #6f42c1;
+            margin: 0 4px;
+        }
+
+        .book-info {
+            background: #fff;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .cover-wrap {
+            float: left;
+            margin-right: 18px;
+        }
+
+        .book-info .cover {
+            width: 110px;
+            height: 150px;
+            object-fit: cover;
+            border: 1px solid #f0f0f0;
+        }
+
+        .book-info .detail {
+            overflow: hidden;
+        }
+
+        .book-info .title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .meta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px 30px;
+            margin-bottom: 12px;
+            font-size: 13px;
+        }
+
+        .meta-col {
+            display: flex;
+            align-items: center;
+        }
+
+        .meta-label {
+            color: #999;
+            margin-right: 5px;
+        }
+
+        .meta-value {
+            color: #333;
+            font-weight: 500;
+        }
+
+        .book-info .desc {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        .book-info .tags {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        .book-info .tags a {
+            color: #6f42c1;
+            margin: 0 3px;
+        }
+
+        .btn-group {
+            margin-bottom: 10px;
+        }
+
+        .btn-group .btn {
+            display: inline-block;
+            padding: 5px 14px;
+            margin-right: 8px;
+            border-radius: 3px;
+            color: #fff;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .btn-read {
+            background: #dc3545;
+        }
+
+        .btn-chapter {
+            background: #17a2b8;
+        }
+
+        .btn-collect {
+            background: #28a745;
+        }
+
+        .last-chapter {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .chapter-section {
+            background: #fff;
+            padding: 15px;
+            margin: 12px 0;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+        }
+
+        .chapter-section h3 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            padding-left: 24px;
+            position: relative;
+            color: #333;
+        }
+
+        .chapter-section h3.latest-title::before {
+            content: "\f017";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: #666;
+        }
+
+        .chapter-section h3.all-title::before {
+            content: "\f02d";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: #666;
+        }
+
+        .chapter-list {
+            display: grid;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .chapter-list.latest {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .chapter-list.all {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .chapter-list li {
+            padding: 5px 0;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        .chapter-list li a {
+            color: #6f42c1;
+        }
+
+        .chapter-list li a:hover {
+            color: #4b2e99;
+            text-decoration: underline;
+        }
+
+        .hidden-chapter {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #dc3545;
+            cursor: pointer;
+            display: block;
+        }
+
+        .related-books {
+            background: #fff;
+            padding: 15px;
+            margin: 12px 0;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .related-books h3 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .related-books .more {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            font-size: 14px;
+            color: #6f42c1;
+            text-decoration: none;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .related-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 10px;
+            border: 1px solid #f5f5f5;
+            border-radius: 4px;
+            min-width: 0;
+        }
+
+        .item-img {
+            width: 120px;
+            flex-shrink: 0;
+            margin-right: 15px;
+        }
+
+        .item-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .item-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .item-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 6px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .item-author {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 6px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .item-desc {
+            font-size: 12px;
+            color: #999;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.4;
+        }
+
+        .footer {
+            text-align: center;
+            color: #999;
+            padding: 16px 0;
+            border-top: 1px solid #eee;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="site-nav">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="http://js01.ccyyff.cn/index">首页</a></li>
+                <li><a href="http://js01.ccyyff.cn/detail">书库</a></li>
+                <li><a href="http://js01.ccyyff.cn/detail">排行</a></li>
+                <li><a href="http://js01.ccyyff.cn/detail">全本</a></li>
+                <li><a href="http://js01.ccyyff.cn/detail">轨迹</a></li>
+            </ul>
+
+            <div class="search-box">
+                <input type="text" placeholder="搜索作品">
+                <button onclick="window.location.href='http://js01.ccyyff.cn/detail'">搜索</button>
+            </div>
+
+            <div class="auth-links">
+                <a href="http://js01.ccyyff.cn/detail">登录</a>
+                <a href="http://js01.ccyyff.cn/detail">注册</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="http://js01.ccyyff.cn/index">首页</a> >
+            <a href="http://js01.ccyyff.cn/detail" id="category-link">校园</a> >
+            <span id="book-title">测试关键词14</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="book-info" id="book-info">
+            <div class="cover-wrap">
+                <img src="" alt="书籍封面" class="cover" id="book-cover">
+            </div>
+            <div class="detail">
+                <h2 class="title" id="book-title2">测试关键词14</h2>
+                <div class="meta-row" id="book-meta">
+                    <div class="meta-col">
+                        <span class="meta-label">作者：</span>
+                        <span class="meta-value" id="book-author"></span>
+                    </div>
+                    <div class="meta-col">
+                        <span class="meta-label">字数：</span>
+                        <span class="meta-value" id="book-tag1"></span>
+                    </div>
+                    <div class="meta-col">
+                        <span class="meta-label">阅读：</span>
+                        <span class="meta-value" id="book-tag2"></span>
+                    </div>
+                    <div class="meta-col">
+                        <span class="meta-label">状态：</span>
+                        <span class="meta-value">连载</span>
+                    </div>
+                </div>
+                <div class="desc" id="book-desc"></div>
+                <div class="tags" id="book-tags"></div>
+                <div class="btn-group">
+                    <span class="btn btn-read" id="btn-read" onclick="window.location.href='http://js01.ccyyff.cn/detail'">开始阅读</span>
+                    <span class="btn btn-chapter" id="btn-chapter" onclick="window.location.href='http://js01.ccyyff.cn/detail'">全部章节</span>
+                    <span class="btn btn-collect" id="btn-collect" onclick="window.location.href='http://js01.ccyyff.cn/detail'">加入书架</span>
+                </div>
+                <div class="last-chapter" id="last-chapter"></div>
+            </div>
+        </div>
+
+        <div class="chapter-section">
+            <h3 class="latest-title">最新章节列表</h3>
+            <ul class="chapter-list latest" id="latest-chapter-list"></ul>
+        </div>
+
+        <div class="chapter-section">
+            <h3 class="all-title">全部章节目录</h3>
+            <ul class="chapter-list all" id="all-chapter-list"></ul>
+            <span class="hidden-chapter" id="hidden-chapter-hint" onclick="window.location.href='http://js01.ccyyff.cn/detail'">点击查看中间隐藏的7112章节</span>
+        </div>
+
+        <div class="related-books">
+            <h3 id="related-title">校园相关阅读</h3>
+            <a href="http://js01.ccyyff.cn/detail" class="more">More+</a>
+            <div class="related-grid" id="related-books-list"></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>《测试关键词14》所有内容均来自互联网或网友上传，资源宝测试只为原作者的小说进行宣传。欢迎各位书友支持并收藏《测试关键词14》最新章节。</p>
+        <p>本站所有小说为转载作品，所有章节均由网友上传，转载至本站只是为了宣传本书让更多读者欣赏。</p>
+        <p>Copyright &copy; 2020 资源宝测试 All Rights Reserved.</p>
+    </div>
+
+    <script>
+        const API_URL = 'http://js01.ccyyff.cn:8055/api/detail';
+
+        function renderPage(data) {
+            document.getElementById('category-link').innerText = data['分类'];
+            document.getElementById('book-title').innerText = data.book_name;
+
+            const coverUrl = data.book_cover.replace(/http:\/\/wz09.eeyyk.cnhttp:\/\/wz09.eeyyk.cn/, 'http://wz09.eeyyk.cn');
+            document.getElementById('book-cover').src = coverUrl;
+
+            document.getElementById('book-title2').innerText = data.book_name;
+
+            document.getElementById('book-author').innerText = data.book_author;
+            document.getElementById('book-tag1').innerText = data.book_tag1;
+            document.getElementById('book-tag2').innerText = data.book_tag2;
+
+            const descHtml = `
+                <p>${data.intro1.replace(/　　/g, '<br>')}</p>
+                <p>${data.intro2.replace(/　　/g, '<br>')}</p>
+                <p>${data.intro3.replace(/　　/g, '<br>')}</p>
+            `;
+            document.getElementById('book-desc').innerHTML = descHtml;
+
+            document.getElementById('book-tags').innerHTML = `
+                标签：<a href="http://js01.ccyyff.cn/detail">测试关键词17</a>、<a href="http://js01.ccyyff.cn/detail">测试关键词29</a>、<a href="http://js01.ccyyff.cn/detail">测试关键词4</a>
+            `;
+
+            document.getElementById('last-chapter').innerHTML = `
+                最新章节：<a style="color:#dc3545" href="http://js01.ccyyff.cn/detail">${data.new_chapter}</a>（${data.new_time}）
+            `;
+
+            const latestChapters = data.new_list.slice(0, 9);
+            const latestList = document.getElementById('latest-chapter-list');
+            latestList.innerHTML = '';
+            latestChapters.forEach(chapter => {
+                const li = document.createElement('li');
+                li.innerHTML = `<a href="http://js01.ccyyff.cn/detail">${chapter}</a>`;
+                latestList.appendChild(li);
+            });
+
+            const allChapters = data.new_list.slice(9, 29);
+            const allList = document.getElementById('all-chapter-list');
+            allList.innerHTML = '';
+            allChapters.forEach(chapter => {
+                const li = document.createElement('li');
+                li.innerHTML = `<a href="http://js01.ccyyff.cn/detail">${chapter}</a>`;
+                allList.appendChild(li);
+            });
+
+            document.getElementById('related-title').innerText = data.相关;
+
+            if (!data.books || data.books.length === 0) {
+                relatedGrid.innerHTML = '<div style="grid-column: 1/-1; text-align:center; color:#999;">暂无相关书籍</div>';
+                return;
+            }
+
+            const relatedGrid = document.getElementById('related-books-list');
+            data.books.forEach(book => {
+                const coverImg = book.cover_img.replace(/http:\/\/wz09.eeyyk.cnhttp:\/\/wz09.eeyyk.cn/, 'http://wz09.eeyyk.cn');
+                const cleanIntro = book.introduction.replace(/　　/g, ' ').trim();
+
+                const item = document.createElement('div');
+                item.className = 'related-item';
+                item.innerHTML = `
+                    <div class="item-img">
+                        <a href="http://js01.ccyyff.cn/detail">
+                            <img src="${coverImg}" alt="${book.book_name}" onerror="this.src='https://via.placeholder.com/120x180?text=封面缺失'">
+                        </a>
+                    </div>
+                    <div class="item-info">
+                        <h4 class="item-title">
+                            <a href="http://js01.ccyyff.cn/detail">${book.book_name}</a>
+                        </h4>
+                        <p class="item-author">作者：${book.author || '匿名'}</p>
+                        <p class="item-desc">简介：${cleanIntro}</p>
+                    </div>
+                `;
+                relatedGrid.appendChild(item);
+            });
+        }
+        const API_URL = '/api/detail';
+
+        async function init() {
+            try {
+                const response = await fetch(API_URL);
+                const data = await response.json();
+                renderPage(data);
+            } catch (error) {
+                console.error('数据加载失败:', error);
+                alert('加载失败，请稍后重试');
+            }
+        }
+
+        init();
+    </script>
+</body>
+
+</html>
