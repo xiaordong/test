@@ -7,6 +7,7 @@
     <title>测试关键词14 - 资源宝测试</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
+        /* 样式部分保持不变 */
         /* 基础样式保持与目标站一致 */
         body {
             font-family: "Microsoft YaHei", sans-serif;
@@ -732,191 +733,191 @@
 </head>
 
 <body>
-    <nav class="site-nav">
-        <div class="nav-container">
-            <ul class="nav-links">
-                <li><a href="http://js01.ccyyff.cn/index">首页</a></li>
-                <li><a href="http://js01.ccyyff.cn/detail">书库</a></li>
-                <li><a href="http://js01.ccyyff.cn/detail">排行</a></li>
-                <li><a href="http://js01.ccyyff.cn/detail">全本</a></li>
-                <li><a href="http://js01.ccyyff.cn/detail">轨迹</a></li>
-            </ul>
+<nav class="site-nav">
+    <div class="nav-container">
+        <ul class="nav-links">
+            <li><a href="/index">首页</a></li>
+            <li><a href="/detail">书库</a></li>
+            <li><a href="/detail">排行</a></li>
+            <li><a href="/detail">全本</a></li>
+            <li><a href="/detail">轨迹</a></li>
+        </ul>
 
-            <div class="search-box">
-                <input type="text" placeholder="搜索作品">
-                <button onclick="window.location.href='http://js01.ccyyff.cn/detail'">搜索</button>
-            </div>
-
-            <div class="auth-links">
-                <a href="http://js01.ccyyff.cn/detail">登录</a>
-                <a href="http://js01.ccyyff.cn/detail">注册</a>
-            </div>
+        <div class="search-box">
+            <input type="text" placeholder="搜索作品">
+            <button onclick="window.location.href='/detail'">搜索</button>
         </div>
-    </nav>
 
-    <div class="breadcrumb">
-        <div class="container">
-            <a href="http://js01.ccyyff.cn/index">首页</a> >
-            <a href="http://js01.ccyyff.cn/detail" id="category-link">校园</a> >
-            <span id="book-title">测试关键词14</span>
+        <div class="auth-links">
+            <a href="/detail">登录</a>
+            <a href="/detail">注册</a>
         </div>
     </div>
+</nav>
 
+<div class="breadcrumb">
     <div class="container">
-        <div class="book-info" id="book-info">
-            <div class="cover-wrap">
-                <img src="" alt="书籍封面" class="cover" id="book-cover">
-            </div>
-            <div class="detail">
-                <h2 class="title" id="book-title2">测试关键词14</h2>
-                <div class="meta-row" id="book-meta">
-                    <div class="meta-col">
-                        <span class="meta-label">作者：</span>
-                        <span class="meta-value" id="book-author"></span>
-                    </div>
-                    <div class="meta-col">
-                        <span class="meta-label">字数：</span>
-                        <span class="meta-value" id="book-tag1"></span>
-                    </div>
-                    <div class="meta-col">
-                        <span class="meta-label">阅读：</span>
-                        <span class="meta-value" id="book-tag2"></span>
-                    </div>
-                    <div class="meta-col">
-                        <span class="meta-label">状态：</span>
-                        <span class="meta-value">连载</span>
-                    </div>
+        <a href="/index">首页</a> >
+        <a href="/detail" id="category-link">校园</a> >
+        <span id="book-title">测试关键词14</span>
+    </div>
+</div>
+
+<div class="container">
+    <div class="book-info" id="book-info">
+        <div class="cover-wrap">
+            <img src="" alt="书籍封面" class="cover" id="book-cover">
+        </div>
+        <div class="detail">
+            <h2 class="title" id="book-title2">测试关键词14</h2>
+            <div class="meta-row" id="book-meta">
+                <div class="meta-col">
+                    <span class="meta-label">作者：</span>
+                    <span class="meta-value" id="book-author"></span>
                 </div>
-                <div class="desc" id="book-desc"></div>
-                <div class="tags" id="book-tags"></div>
-                <div class="btn-group">
-                    <span class="btn btn-read" id="btn-read" onclick="window.location.href='http://js01.ccyyff.cn/detail'">开始阅读</span>
-                    <span class="btn btn-chapter" id="btn-chapter" onclick="window.location.href='http://js01.ccyyff.cn/detail'">全部章节</span>
-                    <span class="btn btn-collect" id="btn-collect" onclick="window.location.href='http://js01.ccyyff.cn/detail'">加入书架</span>
+                <div class="meta-col">
+                    <span class="meta-label">字数：</span>
+                    <span class="meta-value" id="book-tag1"></span>
                 </div>
-                <div class="last-chapter" id="last-chapter"></div>
+                <div class="meta-col">
+                    <span class="meta-label">阅读：</span>
+                    <span class="meta-value" id="book-tag2"></span>
+                </div>
+                <div class="meta-col">
+                    <span class="meta-label">状态：</span>
+                    <span class="meta-value">连载</span>
+                </div>
             </div>
-        </div>
-
-        <div class="chapter-section">
-            <h3 class="latest-title">最新章节列表</h3>
-            <ul class="chapter-list latest" id="latest-chapter-list"></ul>
-        </div>
-
-        <div class="chapter-section">
-            <h3 class="all-title">全部章节目录</h3>
-            <ul class="chapter-list all" id="all-chapter-list"></ul>
-            <span class="hidden-chapter" id="hidden-chapter-hint" onclick="window.location.href='http://js01.ccyyff.cn/detail'">点击查看中间隐藏的7112章节</span>
-        </div>
-
-        <div class="related-books">
-            <h3 id="related-title">校园相关阅读</h3>
-            <a href="http://js01.ccyyff.cn/detail" class="more">More+</a>
-            <div class="related-grid" id="related-books-list"></div>
+            <div class="desc" id="book-desc"></div>
+            <div class="tags" id="book-tags"></div>
+            <div class="btn-group">
+                <span class="btn btn-read" id="btn-read" onclick="window.location.href='/detail'">开始阅读</span>
+                <span class="btn btn-chapter" id="btn-chapter" onclick="window.location.href='/detail'">全部章节</span>
+                <span class="btn btn-collect" id="btn-collect" onclick="window.location.href='/detail'">加入书架</span>
+            </div>
+            <div class="last-chapter" id="last-chapter"></div>
         </div>
     </div>
 
-    <div class="footer">
-        <p>《测试关键词14》所有内容均来自互联网或网友上传，资源宝测试只为原作者的小说进行宣传。欢迎各位书友支持并收藏《测试关键词14》最新章节。</p>
-        <p>本站所有小说为转载作品，所有章节均由网友上传，转载至本站只是为了宣传本书让更多读者欣赏。</p>
-        <p>Copyright &copy; 2020 资源宝测试 All Rights Reserved.</p>
+    <div class="chapter-section">
+        <h3 class="latest-title">最新章节列表</h3>
+        <ul class="chapter-list latest" id="latest-chapter-list"></ul>
     </div>
 
-    <script>
-        const API_URL = 'http://js01.ccyyff.cn:8055/api/detail';
+    <div class="chapter-section">
+        <h3 class="all-title">全部章节目录</h3>
+        <ul class="chapter-list all" id="all-chapter-list"></ul>
+        <span class="hidden-chapter" id="hidden-chapter-hint" onclick="window.location.href='/detail'">点击查看中间隐藏的7112章节</span>
+    </div>
 
-        function renderPage(data) {
-            document.getElementById('category-link').innerText = data['分类'];
-            document.getElementById('book-title').innerText = data.book_name;
+    <div class="related-books">
+        <h3 id="related-title">校园相关阅读</h3>
+        <a href="/detail" class="more">More+</a>
+        <div class="related-grid" id="related-books-list"></div>
+    </div>
+</div>
 
-            const coverUrl = data.book_cover.replace(/http:\/\/wz09.eeyyk.cnhttp:\/\/wz09.eeyyk.cn/, 'http://wz09.eeyyk.cn');
-            document.getElementById('book-cover').src = coverUrl;
+<div class="footer">
+    <p>《测试关键词14》所有内容均来自互联网或网友上传，资源宝测试只为原作者的小说进行宣传。欢迎各位书友支持并收藏《测试关键词14》最新章节。</p>
+    <p>本站所有小说为转载作品，所有章节均由网友上传，转载至本站只是为了宣传本书让更多读者欣赏。</p>
+    <p>Copyright &copy; 2020 资源宝测试 All Rights Reserved.</p>
+</div>
 
-            document.getElementById('book-title2').innerText = data.book_name;
+<script>
+    // 后端API使用相对路径（自动适配当前域名+8055端口，需服务器配置支持）
+    const API_URL = '/api/detail';
 
-            document.getElementById('book-author').innerText = data.book_author;
-            document.getElementById('book-tag1').innerText = data.book_tag1;
-            document.getElementById('book-tag2').innerText = data.book_tag2;
+    function renderPage(data) {
+        document.getElementById('category-link').innerText = data['分类'];
+        document.getElementById('book-title').innerText = data.book_name;
 
-            const descHtml = `
+        const coverUrl = data.book_cover.replace(/http:\/\/wz09.eeyyk.cnhttp:\/\/wz09.eeyyk.cn/, 'http://wz09.eeyyk.cn');
+        document.getElementById('book-cover').src = coverUrl;
+
+        document.getElementById('book-title2').innerText = data.book_name;
+
+        document.getElementById('book-author').innerText = data.book_author;
+        document.getElementById('book-tag1').innerText = data.book_tag1;
+        document.getElementById('book-tag2').innerText = data.book_tag2;
+
+        const descHtml = `
                 <p>${data.intro1.replace(/　　/g, '<br>')}</p>
                 <p>${data.intro2.replace(/　　/g, '<br>')}</p>
                 <p>${data.intro3.replace(/　　/g, '<br>')}</p>
             `;
-            document.getElementById('book-desc').innerHTML = descHtml;
+        document.getElementById('book-desc').innerHTML = descHtml;
 
-            document.getElementById('book-tags').innerHTML = `
-                标签：<a href="http://js01.ccyyff.cn/detail">测试关键词17</a>、<a href="http://js01.ccyyff.cn/detail">测试关键词29</a>、<a href="http://js01.ccyyff.cn/detail">测试关键词4</a>
+        document.getElementById('book-tags').innerHTML = `
+                标签：<a href="/detail">测试关键词17</a>、<a href="/detail">测试关键词29</a>、<a href="/detail">测试关键词4</a>
             `;
 
-            document.getElementById('last-chapter').innerHTML = `
-                最新章节：<a style="color:#dc3545" href="http://js01.ccyyff.cn/detail">${data.new_chapter}</a>（${data.new_time}）
+        document.getElementById('last-chapter').innerHTML = `
+                最新章节：<a style="color:#dc3545" href="/detail">${data.new_chapter}</a>（${data.new_time}）
             `;
 
-            const latestChapters = data.new_list.slice(0, 9);
-            const latestList = document.getElementById('latest-chapter-list');
-            latestList.innerHTML = '';
-            latestChapters.forEach(chapter => {
-                const li = document.createElement('li');
-                li.innerHTML = `<a href="http://js01.ccyyff.cn/detail">${chapter}</a>`;
-                latestList.appendChild(li);
-            });
+        const latestChapters = data.new_list.slice(0, 9);
+        const latestList = document.getElementById('latest-chapter-list');
+        latestList.innerHTML = '';
+        latestChapters.forEach(chapter => {
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="/detail">${chapter}</a>`;
+            latestList.appendChild(li);
+        });
 
-            const allChapters = data.new_list.slice(9, 29);
-            const allList = document.getElementById('all-chapter-list');
-            allList.innerHTML = '';
-            allChapters.forEach(chapter => {
-                const li = document.createElement('li');
-                li.innerHTML = `<a href="http://js01.ccyyff.cn/detail">${chapter}</a>`;
-                allList.appendChild(li);
-            });
+        const allChapters = data.new_list.slice(9, 29);
+        const allList = document.getElementById('all-chapter-list');
+        allList.innerHTML = '';
+        allChapters.forEach(chapter => {
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="/detail">${chapter}</a>`;
+            allList.appendChild(li);
+        });
 
-            document.getElementById('related-title').innerText = data.相关;
+        document.getElementById('related-title').innerText = data.相关;
 
-            if (!data.books || data.books.length === 0) {
-                relatedGrid.innerHTML = '<div style="grid-column: 1/-1; text-align:center; color:#999;">暂无相关书籍</div>';
-                return;
-            }
+        if (!data.books || data.books.length === 0) {
+            relatedGrid.innerHTML = '<div style="grid-column: 1/-1; text-align:center; color:#999;">暂无相关书籍</div>';
+            return;
+        }
 
-            const relatedGrid = document.getElementById('related-books-list');
-            data.books.forEach(book => {
-                const coverImg = book.cover_img.replace(/http:\/\/wz09.eeyyk.cnhttp:\/\/wz09.eeyyk.cn/, 'http://wz09.eeyyk.cn');
-                const cleanIntro = book.introduction.replace(/　　/g, ' ').trim();
+        const relatedGrid = document.getElementById('related-books-list');
+        data.books.forEach(book => {
+            const coverImg = book.cover_img.replace(/http:\/\/wz09.eeyyk.cnhttp:\/\/wz09.eeyyk.cn/, 'http://wz09.eeyyk.cn');
+            const cleanIntro = book.introduction.replace(/　　/g, ' ').trim();
 
-                const item = document.createElement('div');
-                item.className = 'related-item';
-                item.innerHTML = `
+            const item = document.createElement('div');
+            item.className = 'related-item';
+            item.innerHTML = `
                     <div class="item-img">
-                        <a href="http://js01.ccyyff.cn/detail">
+                        <a href="/detail">
                             <img src="${coverImg}" alt="${book.book_name}" onerror="this.src='https://via.placeholder.com/120x180?text=封面缺失'">
                         </a>
                     </div>
                     <div class="item-info">
                         <h4 class="item-title">
-                            <a href="http://js01.ccyyff.cn/detail">${book.book_name}</a>
+                            <a href="/detail">${book.book_name}</a>
                         </h4>
                         <p class="item-author">作者：${book.author || '匿名'}</p>
                         <p class="item-desc">简介：${cleanIntro}</p>
                     </div>
                 `;
-                relatedGrid.appendChild(item);
-            });
-        }
-        const API_URL = '/api/detail';
+            relatedGrid.appendChild(item);
+        });
+    }
 
-        async function init() {
-            try {
-                const response = await fetch(API_URL);
-                const data = await response.json();
-                renderPage(data);
-            } catch (error) {
-                console.error('数据加载失败:', error);
-                alert('加载失败，请稍后重试');
-            }
+    async function init() {
+        try {
+            const response = await fetch(API_URL);
+            const data = await response.json();
+            renderPage(data);
+        } catch (error) {
+            console.error('数据加载失败:', error);
+            alert('加载失败，请稍后重试');
         }
+    }
 
-        init();
-    </script>
+    init();
+</script>
 </body>
 
 </html>

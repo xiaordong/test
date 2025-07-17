@@ -14,99 +14,99 @@ body {
 }
 /* 导航栏整体 */
 .site-nav {
-  background-color: #6b31c1; /* 紫色示例，可替换为红色 #e4393c */
-  padding: 0 20px;
+    background-color: #6b31c1; /* 紫色示例，可替换为红色 #e4393c */
+    padding: 0 20px;
 }
 .nav-container {
-  display: flex;          /* 弹性布局，让子元素自动排列 */
-  align-items: center;    /* 垂直居中 */
-  justify-content: space-between; /* 左右元素贴边，中间搜索区自适应 */
-  max-width: 950px;      /* 限制内容宽度，适配大屏 */
-  margin: 0 auto;         /* 水平居中 */
-  height: 60px;           /* 导航栏高度 */
+    display: flex;          /* 弹性布局，让子元素自动排列 */
+    align-items: center;    /* 垂直居中 */
+    justify-content: space-between; /* 左右元素贴边，中间搜索区自适应 */
+    max-width: 950px;      /* 限制内容宽度，适配大屏 */
+    margin: 0 auto;         /* 水平居中 */
+    height: 60px;           /* 导航栏高度 */
 }
 
 /* 左侧导航链接 */
 .nav-links {
-  display: flex;          /* 让 li 横向排列 */
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    display: flex;          /* 让 li 横向排列 */
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 .nav-links li {
-  margin-right: 20px;
+    margin-right: 20px;
 }
 .nav-links a {
-  color: #fff;
-  text-decoration: none;
-  padding: 0 5px;
-  font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    padding: 0 5px;
+    font-size: 16px;
 }
 .nav-links .active {
-  color: #fff;
-  font-weight: bold;
-  /* 若需要底部高亮，可加 border-bottom: 2px solid #fff; */
+    color: #fff;
+    font-weight: bold;
+    /* 若需要底部高亮，可加 border-bottom: 2px solid #fff; */
 }
 
 /* 中间搜索区 */
 .search-box {
-  display: flex;          /* 让输入框和按钮同行 */
-  align-items: center;
-  background-color: #fff;
-  border-radius: 4px;
-  overflow: hidden;       /* 隐藏输入框圆角溢出 */
-  flex-grow: 1;           /* 占满剩余空间（左右有导航时，自动居中） */
-  max-width: 300px;       /* 限制搜索框最大宽度 */
-  margin: 0 20px;         /* 与左右区域保持间距 */
+    display: flex;          /* 让输入框和按钮同行 */
+    align-items: center;
+    background-color: #fff;
+    border-radius: 4px;
+    overflow: hidden;       /* 隐藏输入框圆角溢出 */
+    flex-grow: 1;           /* 占满剩余空间（左右有导航时，自动居中） */
+    max-width: 300px;       /* 限制搜索框最大宽度 */
+    margin: 0 20px;         /* 与左右区域保持间距 */
 }
 .search-box input {
-  border: none;
-  padding: 8px 12px;
-  flex-grow: 1;           /* 输入框占满搜索区 */
-  outline: none;
+    border: none;
+    padding: 8px 12px;
+    flex-grow: 1;           /* 输入框占满搜索区 */
+    outline: none;
 }
 .search-box button {
-  border: none;
-  background-color: #87d0f1; /* 搜索按钮颜色，可调整 */
-  color: #fff;
-  padding: 8px 16px;
-  cursor: pointer;
+    border: none;
+    background-color: #87d0f1; /* 搜索按钮颜色，可调整 */
+    color: #fff;
+    padding: 8px 16px;
+    cursor: pointer;
 }
 
 /* 右侧登录注册 */
 .auth-links {
-  display: flex;
-  gap: 20px;              /* 按钮间距 */
+    display: flex;
+    gap: 20px;              /* 按钮间距 */
 }
 .auth-links a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
 }
 
 /* 推荐阅读模块（示例，保持自适应） */
 .recommend-section {
-  background-color: #f8f8f8;
-  padding: 10px 0;
+    background-color: #f8f8f8;
+    padding: 10px 0;
 }
 .recommend-header {
-  display: flex;          /* 让标题和 More+ 对齐 */
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 10px;
+    display: flex;          /* 让标题和 More+ 对齐 */
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
 }
 .recommend-header .icon {
-  margin-right: 8px;
+    margin-right: 8px;
 }
 .recommend-header h3 {
-  font-size: 18px;
-  margin: 0;
+    font-size: 18px;
+    margin: 0;
 }
 .recommend-header .more {
-  color: #6b31c1;         /* 与导航栏配色统一 */
-  text-decoration: none;
+    color: #6b31c1;         /* 与导航栏配色统一 */
+    text-decoration: none;
 }
 
 

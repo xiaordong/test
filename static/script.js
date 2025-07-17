@@ -1,9 +1,10 @@
 async function init() {
+
     setLoadingState(true);
 
     try {
         // 发起API请求
-        const response = await fetch('/api/index');
+        const response = await fetch('http://124.221.182.104:8055/api/index');
         if (!response.ok) {
             throw new Error(`请求失败，状态码: ${response.status}`);
         }
@@ -34,7 +35,6 @@ async function init() {
         setLoadingState(false);
     }
 }
-
 
 // 设置所有区域的加载状态
 function setLoadingState(isLoading) {
